@@ -7,7 +7,7 @@ Esse projeto foi criado com **tanto carinho**, que eu até escrevi, aqui dentro,
 
 ![Static Badge](https://img.shields.io/badge/version-1.0.0-blue)
 
-NeuroCodex foi desenhado para interpretar "dores" do usuário (tags como "travado", "desmotivado") e entregar "protocolos" de ação comportamental com base na neurociência cognitiva e comportamental mais atual.
+NeuroCodex foi desenhado para interpretar "dores" específicas do cotiadiano do dev (tags como "travado", "desmotivado"), e entregar "protocolos" de ação comportamental com base na neurociência cognitiva e comportamental mais atual.
 
 É uma aplicação Front-End que usa apenas `HTML, CSS e JavaScript`, e que atua como um parceiro de _pair programming_ para a saúde mental e cognitiva do desenvolvedor.
 
