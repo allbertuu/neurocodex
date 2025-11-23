@@ -1,0 +1,201 @@
+[
+  {
+    "titulo": "Chunking (Agrupamento Cognitivo)",
+    "categoria": "Carga Cognitiva",
+    "descricao": "Sentindo-se travado e sobrecarregado ao olhar para um monólito ou requisito complexo? Sua Carga Cognitiva está excedida. O cérebro processa informações de forma mais eficiente quando elas são agrupadas em 'chunks' (blocos menores).",
+    "aplicacao": "Quebre a feature complexa em tarefas de 25 minutos ou subtarefas que resultem em um commit funcional. Foque apenas no próximo micro-passo, ignorando o resto temporariamente.",
+    "tags": [
+      "complexidade",
+      "produtividade",
+      "organização",
+      "sobrecarga",
+      "foco"
+    ]
+  },
+  {
+    "titulo": "Inércia da Ativação",
+    "categoria": "Sistema de Recompensa (Dopamina)",
+    "descricao": "Se você está desmotivado ou demorando horas para começar a codar uma tarefa importante, a Inércia da Ativação está alta. O cérebro busca economia de energia e vê o início da tarefa como o maior obstáculo.",
+    "aplicacao": "Use a regra dos 2 minutos: comprometa-se a trabalhar na tarefa por apenas 120 segundos. A dopamina liberada pelo pequeno progresso (o 'momentum') ajudará a superar a inércia e continuar o trabalho.",
+    "tags": ["procrastinação", "começar", "motivação", "dopamina"]
+  },
+  {
+    "titulo": "Consolidação da Memória no Sono",
+    "categoria": "Sono",
+    "descricao": "Aprendeu uma nova framework, mas esqueceu a sintaxe crítica no dia seguinte? O sono REM e o sono de ondas lentas são vitais para transferir informações da memória de curto prazo (hipocampo) para a memória de longo prazo (córtex).",
+    "aplicacao": "Não 'maratone' o aprendizado. Sempre durma um ciclo completo (7-9 horas) após sessões intensas de estudo. Minimize o uso de telas de alta luminosidade 1 hora antes de dormir.",
+    "tags": ["aprendizado", "memória", "sono", "retenção"]
+  },
+  {
+    "titulo": "Viés de Confirmação",
+    "categoria": "Vieses cognitivos",
+    "descricao": "Está travado no mesmo bug porque insiste que sua solução inicial é a única correta, ignorando logs ou testes que indicam o contrário? Seu cérebro busca ativamente informações que confirmem crenças pré-existentes.",
+    "aplicacao": "Force-se a escrever uma hipótese 'oposta': 'E se o bug estivesse no lado do servidor?'. Busque ativamente testes que provem que sua solução favorita está errada antes de prosseguir.",
+    "tags": ["bug", "debugging", "teimosia", "erro", "vies"]
+  },
+  {
+    "titulo": "Depleção do Ego (Fadiga de Decisão)",
+    "categoria": "Carga Cognitiva",
+    "descricao": "Se você está desmotivado e exausto mentalmente ao meio-dia, é provável que a Fadiga de Decisão (Depleção do Ego) tenha consumido seus recursos limitados de autocontrole e energia cognitiva.",
+    "aplicacao": "Minimize decisões não relacionadas à codificação (e.g., almoço, roupas, e-mails). Priorize as tarefas mais críticas e cognitivamente exigentes nas primeiras horas da manhã, quando a força de vontade está alta.",
+    "tags": ["burnout", "fadiga", "decisão", "foco"]
+  },
+  {
+    "titulo": "Custo de Comutação",
+    "categoria": "Carga Cognitiva",
+    "descricao": "A alternância rápida entre tickets, linguagens ou projetos (multitarefa) faz você se sentir lento e cometer mais erros. Seu cérebro paga um 'custo' energético e temporal para recarregar o contexto na memória de trabalho.",
+    "aplicacao": "Bloqueie períodos de 90-120 minutos para foco único. Desligue todas as notificações e utilize técnicas de 'deep work' para minimizar interrupções e o custo de comutação.",
+    "tags": ["multitarefa", "foco", "produtividade", "interrupção"]
+  },
+  {
+    "titulo": "Mentalidade de Crescimento (Growth Mindset)",
+    "categoria": "Neuroplasticidade",
+    "descricao": "A crença de que suas habilidades de programação são fixas ('Mindset Fixo') leva à desmotivação após um fracasso. A Neuroplasticidade demonstra que o cérebro pode formar e fortalecer novas conexões através do esforço.",
+    "aplicacao": "Reestruture a falha como feedback. Em vez de pensar 'Eu sou ruim em Rust', diga 'Eu ainda não domino Rust. O que posso aprender com este erro para fortalecer minhas conexões neurais?'.",
+    "tags": [
+      "fracasso",
+      "aprendizado",
+      "resiliência",
+      "crescimento",
+      "habilidade"
+    ]
+  },
+  {
+    "titulo": "Habituação (Redução Dopaminérgica)",
+    "categoria": "Sistema de Recompensa (Dopamina)",
+    "descricao": "Tarefas repetitivas (como refactoring extensivo ou escrever boilerplate) levam à habituação neural, diminuindo a liberação de dopamina no núcleo accumbens, resultando em tédio e desmotivação.",
+    "aplicacao": "Incorpore 'novidade' ou 'gamificação' na tarefa chata. Use uma nova ferramenta de automação, mude o ambiente de trabalho, ou defina um desafio de performance para reativar o circuito de recompensa.",
+    "tags": ["tédio", "rotina", "motivação", "dopamina"]
+  },
+  {
+    "titulo": "Inércia do Sono",
+    "categoria": "Sono",
+    "descricao": "Ao acordar, você está travado, lento e incapaz de engatar no trabalho imediatamente. Isso é a Inércia do Sono, o estado de desempenho cognitivo reduzido após o despertar abrupto, especialmente se interromper o sono de ondas lentas.",
+    "aplicacao": "Evite começar tarefas complexas imediatamente. Faça 15 minutos de exercício leve, hidrate-se, ou exponha-se à luz natural para acelerar a liberação de cortisol e a transição cerebral para o estado de alerta.",
+    "tags": ["acordar", "foco", "manhã", "sono"]
+  },
+  {
+    "titulo": "Viés de Planejamento",
+    "categoria": "Vieses cognitivos",
+    "descricao": "Você sempre subestima o tempo necessário para completar features, ignorando historicamente experiências passadas de atrasos. Este viés foca no melhor cenário possível, resultando em prazos perdidos e estresse.",
+    "aplicacao": "Adicione uma margem de segurança de 40% ao tempo estimado. Utilize a 'visão externa' pedindo a um colega para estimar o pior cenário possível (pré-mortem) para a tarefa.",
+    "tags": ["estimativa", "prazo", "planejamento", "viés"]
+  },
+  {
+    "titulo": "Capacidade da Memória de Trabalho",
+    "categoria": "Carga Cognitiva",
+    "descricao": "Sua memória de trabalho, onde o processamento ativo ocorre, só consegue reter 4 a 7 'chunks' simultaneamente. Debugs complexos que exigem o rastreamento de muitas variáveis excedem essa capacidade, fazendo você se sentir travado.",
+    "aplicacao": "Use ferramentas visuais. Escreva o estado do sistema, o fluxo de execução e as variáveis-chave em papel e caneta ou em um diagrama. Descarregue a informação da sua cabeça para o ambiente externo.",
+    "tags": ["debugging", "memória", "sobrecarga", "foco"]
+  },
+  {
+    "titulo": "Modo Difuso de Pensamento",
+    "categoria": "Neuroplasticidade",
+    "descricao": "Está travado em um problema que o modo focado (córtex pré-frontal) não consegue resolver? O cérebro precisa alternar para o Modo Difuso (Rede de Modo Padrão) para fazer conexões sinápticas distantes, essenciais para a criatividade e insights.",
+    "aplicacao": "Saia do PC e realize uma atividade repetitiva e de baixo esforço cognitivo: caminhe 15 minutos, tome um banho quente ou limpe sua mesa. A solução surgirá quando você não estiver pensando ativamente no problema.",
+    "tags": ["bloqueio", "bug", "descanso", "solução", "insight"]
+  },
+  {
+    "titulo": "Circuito de Feedback de Dopamina",
+    "categoria": "Sistema de Recompensa (Dopamina)",
+    "descricao": "A conclusão de micro-tarefas libera pequenas quantidades de dopamina, reforçando o comportamento. É um circuito de feedback positivo que combate a desmotivação e aumenta o momentum (a sensação de estar 'no fluxo').",
+    "aplicacao": "Divida tarefas grandes em subtarefas minúsculas e visíveis (e.g., 'escrever teste de unidade para X'). Use listas de tarefas digitais ou físicas para obter gratificação instantânea ao marcar 'done' e ativar o circuito de recompensa.",
+    "tags": ["motivação", "progresso", "dopamina", "recompensa"]
+  },
+  {
+    "titulo": "Ritmos Ultradianos",
+    "categoria": "Carga Cognitiva",
+    "descricao": "Sua energia e foco flutuam em ciclos de 90 a 120 minutos, e não em ciclos rígidos de 8 horas. Tentar forçar o foco além desse ciclo natural leva à fadiga do córtex pré-frontal e à queda acentuada na performance.",
+    "aplicacao": "Estruture o trabalho em blocos de 90 minutos de foco intenso ('Deep Work'), seguidos por pausas obrigatórias de 15-20 minutos. Use a pausa para mover-se e restaurar os níveis de glicose no cérebro.",
+    "tags": ["pausa", "energia", "foco", "ciclos", "produtividade"]
+  },
+  {
+    "titulo": "Poda Sináptica (Uso-ou-Perda)",
+    "categoria": "Neuroplasticidade",
+    "descricao": "Aprender um novo paradigma de programação (e.g., sair de OOP para Funcional) exige que o cérebro remova ou enfraqueça as conexões neurais antigas (poda) que competem com a nova informação, um processo de neuroplasticidade intensiva.",
+    "aplicacao": "Crie um ambiente de imersão temporário. Pratique o novo paradigma exclusivamente por um período, evitando voltar aos métodos antigos para acelerar o enfraquecimento das sinapses não utilizadas e fortalecer as novas.",
+    "tags": ["aprendizado", "reestruturação", "hábito", "mudança"]
+  },
+  {
+    "titulo": "Viés de Atribuição Fundamental",
+    "categoria": "Vieses cognitivos",
+    "descricao": "Você atribui o erro ao sistema, ao deployment, ou ao colega, mas dificilmente ao seu próprio código. Este viés é uma defesa cognitiva comum que protege a auto-estima, mas impede o aprendizado real durante o debugging.",
+    "aplicacao": "Implemente o protocolo do 'Pato de Borracha'. Verbalize o código em voz alta, assumindo que *você* cometeu o erro. Isso força a atenção interna e a confrontação da lógica do seu próprio sistema.",
+    "tags": ["erro", "debugging", "auto-engano", "viés", "responsabilidade"]
+  },
+  {
+    "titulo": "Armadilha do Perfeccionismo",
+    "categoria": "Carga Cognitiva",
+    "descricao": "O desejo de código 'perfeito' é um ciclo de recompensa que desvia recursos cognitivos valiosos (Carga Cognitiva) para ganhos marginais. O custo é o atraso na entrega e o esgotamento mental (sentindo-se travado).",
+    "aplicacao": "Defina uma 'Definição de Pronto' (DoD) clara e objetiva antes de começar. Se o critério for atingido (e.g., testes passando, aceitação do PO), pare. Se for para refatorar, agende para o próximo sprint, não agora.",
+    "tags": [
+      "perfeccionismo",
+      "esgotamento",
+      "priorização",
+      "bloqueio",
+      "entrega"
+    ]
+  },
+  {
+    "titulo": "Sobrecarga Sensorial (Learning Fatigue)",
+    "categoria": "Carga Cognitiva",
+    "descricao": "A constante enxurrada de novas tecnologias e informações (o 'hype' tech) satura a capacidade de processamento do tálamo e do córtex. Isso leva à fadiga, ansiedade e desmotivação crônica em relação ao aprendizado.",
+    "aplicacao": "Adote o princípio 'menos é mais'. Escolha apenas 1-2 tecnologias ou habilidades para dominar profundamente por trimestre. Crie um 'buffer' digital para filtrar feeds de notícias e tutoriais irrelevantes.",
+    "tags": ["aprendizado", "sobrecarga", "estresse", "gestão"]
+  },
+  {
+    "titulo": "Cronotipo",
+    "categoria": "Sono",
+    "descricao": "Seu cronotipo ('coruja' ou 'cotovia') é majoritariamente geneticamente determinado e rege seu Ritmo Circadiano. Lutar contra seu ciclo natural para se encaixar em um horário rígido causa privação crônica de sono e baixa performance cognitiva.",
+    "aplicacao": "Ajuste seu horário de trabalho para coincidir com seu pico natural de alerta (e.g., se você é coruja, agende o trabalho pesado após as 10h). Priorize a consistência do horário de sono em relação à quantidade de horas.",
+    "tags": ["sono", "energia", "rotina", "biologia", "desempenho"]
+  },
+  {
+    "titulo": "Efeito Zeigarnik Invertido",
+    "categoria": "Sistema de Recompensa (Dopamina)",
+    "descricao": "O Efeito Zeigarnik padrão faz com que o cérebro se lembre de tarefas incompletas. A satisfação de DELETAR código (refatoração) é uma poderosa recompensa dopaminérgica, pois simboliza o fechamento de laços e a redução da complexidade percebida.",
+    "aplicacao": "Sempre celebre a remoção de código morto ou redundante. Use métricas de 'linhas deletadas' (em vez de apenas adicionadas) para reforçar a motivação durante projetos de refactoring.",
+    "tags": ["refactoring", "dopamina", "satisfação", "progresso"]
+  },
+  {
+    "titulo": "Aprendizado Espaçado (Spaced Repetition)",
+    "categoria": "Neuroplasticidade",
+    "descricao": "Fazer 'cramming' (aprender intensamente tudo de uma vez) cria memórias fracas e de curta duração. O Aprendizado Espaçado otimiza a Neuroplasticidade ao reforçar as conexões sinápticas através da recuperação da informação em intervalos crescentes.",
+    "aplicacao": "Use sistemas de repetição espaçada (como Anki) para revisar comandos, algoritmos ou conceitos críticos de código em intervalos pré-definidos (1 dia, 3 dias, 1 semana). Estude por 30 minutos em vez de 4 horas seguidas.",
+    "tags": [
+      "aprendizado",
+      "retenção",
+      "memória",
+      "estudo",
+      "neuroplasticidade"
+    ]
+  },
+  {
+    "titulo": "Carga Alostática",
+    "categoria": "Carga Cognitiva",
+    "descricao": "A Carga Alostática é o desgaste acumulado nos sistemas regulatórios (como os níveis de cortisol) devido ao estresse crônico de prazos apertados, bugs urgentes e alta exigência cognitiva, levando ao burnout e sensação de estar 'travado' constantemente.",
+    "aplicacao": "Implemente uma rotina de descompressão de 5 minutos após fechar um PR importante ou resolver um bug sério. Pratique 'mindfulness' ou respiração diafragmática para reduzir os níveis de cortisol e restaurar o equilíbrio.",
+    "tags": ["estresse", "saúde", "burnout", "sobrecarga", "cortisol"]
+  },
+  {
+    "titulo": "Maldição do Conhecimento (Curse of Knowledge)",
+    "categoria": "Vieses cognitivos",
+    "descricao": "Por ser um especialista, é difícil se colocar no lugar de quem tem menos conhecimento (usuário ou cliente). Você assume que a informação técnica óbvia para você é igualmente óbvia para todos, resultando em má comunicação de requisitos.",
+    "aplicacao": "Sempre valide as especificações com quem não é técnico. Use a técnica 'Feynman' para explicar a solução em termos simples, forçando-se a identificar e preencher as lacunas de conhecimento.",
+    "tags": ["comunicação", "requisitos", "viés", "cliente", "entendimento"]
+  },
+  {
+    "titulo": "Viés da Disponibilidade",
+    "categoria": "Vieses cognitivos",
+    "descricao": "Você superestima a probabilidade de um evento (como falha no servidor ou um bug específico) porque ele está facilmente disponível na memória (aconteceu recentemente ou causou grande estresse). Isso leva a decisões de engenharia exageradamente complexas.",
+    "aplicacao": "Sempre consulte dados reais (métricas de tempo de atividade, frequência de bugs) em vez de confiar apenas na emoção da última crise. Baseie decisões de arquitetura em fatos, não no medo recente.",
+    "tags": ["risco", "decisão", "memória", "viés", "arquitetura"]
+  },
+  {
+    "titulo": "Neuroquímica do Movimento (BDNF)",
+    "categoria": "Neuroplasticidade",
+    "descricao": "O sedentarismo prolongado diminui o fluxo sanguíneo cerebral e a produção de BDNF (Fator Neurotrófico Derivado do Cérebro), essencial para a Neuroplasticidade, memória e aprendizado, resultando em fadiga mental e desmotivação.",
+    "aplicacao": "A cada 50 minutos, levante-se e mova-se por 5 minutos (alongamento, subir escadas, mini-pausas ativas). Isso aumenta o BDNF e a oxigenação do córtex pré-frontal, melhorando a clareza e combatendo o bloqueio.",
+    "tags": ["saúde", "foco", "energia", "movimento", "neuroplasticidade"]
+  }
+]
