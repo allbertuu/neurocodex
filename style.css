@@ -1,20 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Style+Script&display=swap");
 
 * {
   box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento */
 }
 
 body {
-  background-color: #e2e1dd;
-  color: #363531;
+  background-color: #000000; /* Retornando ao fundo preto original */
+  /* Adicionando a textura sutil de ícones sobre o fundo preto */
+  background-image: radial-gradient(
+      circle at 25% 25%,
+      rgba(255, 255, 255, 0.02),
+      /* Gradiente ainda mais sutil */ rgba(255, 255, 255, 0) 40%
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm-2-20v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM22 28v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  color: #e2e1dd;
   font-family: "Sansation", sans-serif;
   padding: 0 2rem;
+  overflow-x: hidden; /* Previne scroll horizontal indesejado */
 }
 
 h1 {
-  font-family: "Style Script", cursive;
-  font-size: 3rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  /* Efeito de gradiente no texto */
+  background: linear-gradient(90deg, #00ffcc, #c77dff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* Brilho sutil para o efeito neon */
+  text-shadow: 0 0 15px rgba(0, 255, 204, 0.25);
 }
 
 .logo-container {
@@ -34,31 +48,76 @@ header {
 .search-container {
   width: 100%;
   max-width: 500px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
+  position: relative; /* Necessário para posicionar o ícone */
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555; /* Cor inicial do ícone */
+  transition: color 0.3s ease;
+  pointer-events: none; /* Permite clicar através do ícone no input */
 }
 
 header input {
   width: 100%;
-  padding: 12px 16px;
+  padding: 12px 16px 12px 50px; /* Aumenta o padding esquerdo para dar espaço ao ícone */
   margin: 16px 0;
-  border: 2px solid #ccc;
+  border: 1px solid #333; /* Borda sutil */
+  background-color: rgba(0, 0, 0, 0.2); /* Fundo semi-transparente */
   border-radius: 8px;
   font-size: 0.9rem;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
+  color: #fff;
 }
 
-header button {
-  padding: 12px 20px;
-  margin-left: 8px;
-  border: none;
-  border-radius: 8px;
-  background-color: #007bff;
-  color: white;
-  font-size: 0.9rem;
+/* Estiliza o texto do placeholder */
+header input::placeholder {
+  color: #777;
+  transition: opacity 0.3s ease;
+}
+
+header input:focus {
+  outline: none;
+  border-color: rgba(0, 255, 204, 0.5); /* Borda com a cor do tema */
+  background-color: rgba(0, 0, 0, 0.1);
+  /* Efeito de brilho "neon" */
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.3), 0 0 20px rgba(0, 255, 204, 0.2);
+}
+
+/* Quando o input está focado, o ícone fica ciano e o placeholder some */
+header input:focus + .search-icon,
+.search-container:has(input:focus) .search-icon {
+  color: #00ffcc;
+}
+
+.filters-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2rem 0 1rem 0;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 1px solid #333;
+  background-color: transparent;
+  color: #c5c5c5;
+  border-radius: 20px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: #00ffcc;
+  color: #110714;
+  border-color: #00ffcc;
+  transform: translateY(-2px);
 }
 
 .cards-container {
@@ -74,22 +133,53 @@ header button {
   padding: 1.5rem;
   margin: 16px;
   border-radius: 8px;
-  color: #ffffff;
-  background: #2b1030; /* Exemplo de fundo escuro */
-  border: 1px solid #333; /* Borda original discreta */
-  transition: transform 0.2s ease; /* Movimento suave */
+  color: #c5c5c5;
+  background: linear-gradient(145deg, #1a0a1f, #110714);
+  border: 1px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  width: 30rem;
-  /* O segredo para não encavalar animações */
-  position: relative;
+  max-width: 30rem;
+  position: relative; /* Necessário para o pseudo-elemento ::before */
+  overflow: hidden;
+  /* Define o estado inicial para evitar o "flicker" na animação */
+  opacity: 0;
+}
+.card {
+  animation: fadeInCard 0.6s ease-out forwards;
+}
+
+/* Efeito de borda com gradiente */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: linear-gradient(145deg, #00ffcc, #2b1030) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
 }
 
 .card:hover {
-  /* Chama a animação criada acima */
-  animation: pulsoSinapse 0.6s ease-out;
-
-  /* Opcional: Um leve levitar para acompanhar o pulso */
   transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover::before {
+  opacity: 1;
+  animation: pulsoSinapse 1.2s infinite ease-in-out;
+}
+
+.card h3 {
+  color: #ffffff;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .card small.tag {
@@ -99,21 +189,189 @@ header button {
   font-weight: bold;
   padding: 4px 8px;
   border-radius: 4px;
-  margin-bottom: -1rem;
+  margin-bottom: 1rem;
+}
+.card .aplicacao {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  border-left: 3px solid #00ffcc;
 }
 
-/* 1. Definimos a animação (O pulso da sinapse) */
+.card .tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.card .tag-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #00ffcc;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
 @keyframes pulsoSinapse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(0, 255, 204, 0.7); /* Começa brilhante e sem tamanho */
-    border-color: rgba(0, 255, 204, 0.8); /* A borda acende */
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(0, 255, 204, 0); /* Expande e fica transparente */
-    border-color: transparent; /* A borda apaga */
-  }
+  0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(0, 255, 204, 0); /* Volta ao normal */
-    border-color: transparent;
+    opacity: 1;
+    filter: brightness(1.8);
+  }
+  50%,
+  99% {
+    opacity: 0.2;
+    filter: brightness(1);
+  }
+}
+
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 2.5rem 0 2rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid #333;
+  color: #c5c5c5;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: #c5c5c5;
+  margin: 0 0.75rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.social-links a:hover {
+  color: #00ffcc;
+  transform: translateY(-3px);
+}
+
+.social-links svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.github-link a {
+  color: #c5c5c5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.github-link a:hover {
+  color: #00ffcc;
+}
+
+/* --- Estilo da Barra de Rolagem --- */
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #110714; /* Cor de fundo da trilha */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333; /* Cor do polegar da barra de rolagem */
+  border-radius: 10px;
+  border: 3px solid #110714; /* Espaçamento ao redor do polegar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Cor do polegar ao passar o mouse */
+}
+
+/* --- Botão Voltar para o Topo --- */
+#back-to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  color: #ffffff; /* Alterado para branco */
+  border: 1px solid #555;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Escondido por padrão */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+#back-to-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#back-to-top-btn:hover {
+  background-color: #444;
+  transform: scale(1.1);
+}
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 768px) {
+  body {
+    padding: 0 1rem; /* Reduz o espaçamento lateral em telas menores */
+  }
+
+  .logo-container {
+    flex-direction: column; /* Empilha o logo e o texto */
+    text-align: center;
+    gap: 0.1rem;
+  }
+
+  .logo-container span {
+    display: none; /* Esconde o separador "|" */
+  }
+
+  .logo-container p {
+    font-size: 0.8rem;
+  }
+
+  h1 {
+    font-size: 2rem; /* Reduz o tamanho do título principal */
+    margin-bottom: 0;
+  }
+
+  header input {
+    font-size: 0.85rem;
+  }
+
+  .filters-container {
+    margin: 1.5rem 0;
+  }
+
+  .card {
+    padding: 1.25rem;
+    margin: 8px; /* Reduz a margem dos cards */
+    width: 100%; /* Faz os cards ocuparem a largura total */
+    max-width: 100%;
   }
 }
