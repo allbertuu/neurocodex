@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #000000; /* Retornando ao fundo preto original */
+  background-color: #181818; /* Retornando ao fundo preto original */
   /* Adicionando a textura sutil de ícones sobre o fundo preto */
   background-image: radial-gradient(
       circle at 25% 25%,
