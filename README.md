@@ -1,6 +1,3 @@
-Esse projeto foi criado com **tanto carinho**, que eu até escrevi, aqui dentro, sobre o que faz projetos serem únicos, dá uma lida, vai ser legal:  
-[O problema de criar projetos que não são parte de nós](https://github.com/allbertuu/neurocodex/issues/1)
-
 <img src="neurocodex-banner.png" alt="neurocodex banner" width="50%">
 
 # NeuroCodex
