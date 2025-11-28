@@ -2,13 +2,13 @@
 
 # NeuroCodex
 
-![Static Badge](https://img.shields.io/badge/version-1.0.0-blue)
+![Static Badge](https://img.shields.io/badge/version-2.0.0-blue)
 
-NeuroCodex foi desenhado para interpretar "dores" específicas do cotidiano do dev (tags como "travado", "desmotivado"), e entregar "protocolos" de ação comportamental com base na neurociência cognitiva e comportamental mais atual.
+NeuroCodex foi desenhado para interpretar "dores" específicas do cotidiano do dev apenas pesquisando palavras como "travado", "desmotivado", etc, e assim entregar "protocolos" de ação comportamental com base na mais atual neurociência cognitiva e comportamental.
 
 É uma aplicação Front-End que usa apenas `HTML, CSS e JavaScript`, e que atua como um parceiro de _pair programming_ para a saúde mental e cognitiva do desenvolvedor.
 
-Ao passar o mouse encima de um protocolo, você verá o pulso elétrico de uma sinapse, simbolizando a ativação neural quando você aplica o protocolo sugerido. 🥰
+> Curiosidade legal: ao passar o mouse encima de um protocolo, você verá o pulso elétrico de uma sinapse, simbolizando a ativação neural quando você aplica o protocolo sugerido. 🥰
 
 **Na prática:**
 
@@ -40,14 +40,12 @@ Ao passar o mouse encima de um protocolo, você verá o pulso elétrico de uma s
 
 ## Decisões de arquitetura
 
-> Esse projeto tem regras, confira o [regulamento](https://fiapcom.sharepoint.com/:w:/s/Alura/IQBEqNMeGSsrTqLfsjTxt_tGAUzrBzRZZ_BtnAevXgqt2yQ?rtime=Qk7vdYoq3kg)
-
 - HTML5 semântico: estrutura clara e acessível
 - CSS3: estilização moderna e compatível com navegadores atuais
 - JavaScript puro (Vanilla JS): linguagem da Web, leve e rápido
-- Gemini API: pela fácil integração com HTML e CSS, além de ser leve e performático
+- Gemini API (geração da base): pela fácil integração com HTML e CSS, além de ser leve e performático
 
-O principal aprendizado com esse projeto foi que você não precisa de um código complexo para criar uma ideia boa. **Você precisa de uma ideia boa** (que tenha profundidade).
+O principal aprendizado com esse projeto foi que você não precisa de um código complexo para criar uma ideia boa. **Você precisa de uma ideia boa**.
 
 ## Cores do projeto
 
@@ -57,9 +55,14 @@ O principal aprendizado com esse projeto foi que você não precisa de um códig
 
 ## Roadmap (próximos passos)
 
-- [] Adicionar mais conteúdos (curados por mim)
-- [] Implementar separação visual das categorias
-- [] Implementar responsividade para dispositivos móveis
+- [ ] Adicionar mais conteúdos (curados por mim)
+- [ ] Implementar sistema de favoritos
+- [x] Inserir favicon personalizada
+- [x] Implementar animações suaves com CSS
+- [x] Implementar tema escuro e fundo decorativo com tema dev
+- [x] Implementar busca em tempo real (similar ao command palette do VSCode)
+- [x] Implementar separação visual das categorias
+- [x] Implementar responsividade para dispositivos móveis
 
 ## Leituras recomendadas
 
