@@ -197,5 +197,192 @@
     "descricao": "O sedentarismo prolongado diminui o fluxo sanguíneo cerebral e a produção de BDNF (Fator Neurotrófico Derivado do Cérebro), essencial para a Neuroplasticidade, memória e aprendizado, resultando em fadiga mental e desmotivação.",
     "aplicacao": "A cada 50 minutos, levante-se e mova-se por 5 minutos (alongamento, subir escadas, mini-pausas ativas). Isso aumenta o BDNF e a oxigenação do córtex pré-frontal, melhorando a clareza e combatendo o bloqueio.",
     "tags": ["saúde", "foco", "energia", "movimento", "neuroplasticidade"]
+  },
+  {
+    "titulo": "Efeito de Posição Serial",
+    "categoria": "Carga Cognitiva",
+    "descricao": "Você se sente sobrecarregado ao revisar longas listas de bugs ou tarefas (tickets)? A memória de trabalho tende a priorizar e lembrar melhor dos itens no início e no fim de uma sequência, deixando o meio negligenciado.",
+    "aplicacao": "Divida grandes listas de tarefas (acima de 7 itens) em blocos menores. Sempre revise e priorize os 2 primeiros e os 2 últimos itens de cada bloco antes de começar, garantindo que o meio não seja esquecido.",
+    "tags": ["memória", "priorização", "tarefas", "listas", "sobrecarga"]
+  },
+  {
+    "titulo": "Ressonância Límbica",
+    "categoria": "Sistema de Recompensa (Dopamina)",
+    "descricao": "A desmotivação ou a dificuldade de trabalhar em equipe pode ser explicada por este fenômeno: as emoções (positivas ou negativas) são contagiantes, impactando a liberação de dopamina e o ânimo coletivo.",
+    "aplicacao": "Busque interações breves e positivas (micro-check-ins de 1 minuto) com colegas antes de sessões de codificação complexas ou reuniões críticas para elevar o estado emocional e o engajamento da equipe.",
+    "tags": ["equipe", "motivação", "colaboração", "ambiente", "emoção"]
+  },
+  {
+    "titulo": "Potenciação de Longo Prazo (LTP)",
+    "categoria": "Neuroplasticidade",
+    "descricao": "Você tem o sentimento de que o aprendizado é lento ou que novas sintaxes 'não grudam'? LTP é o mecanismo pelo qual as sinapses se fortalecem através do uso frequente, tornando o caminho neural mais eficiente.",
+    "aplicacao": "Para internalizar um novo padrão ou método de código, force-se a usá-lo repetidamente (pelo menos 3 a 5 vezes) em contextos ligeiramente diferentes na mesma sessão de estudo ou codificação.",
+    "tags": ["aprendizado", "memória", "sinapse", "repetição", "habilidade"]
+  },
+  {
+    "titulo": "Efeito Dunning-Kruger",
+    "categoria": "Vieses cognitivos",
+    "descricao": "Este viés explica a falsa confiança dos iniciantes ('pico da estupidez') e a sensação de fraude ('vale da desesperança') sentida por desenvolvedores mais experientes, quando o conhecimento real se manifesta.",
+    "aplicacao": "Mantenha um diário de progresso (logbook) registrando especificamente o que você *não sabe* ou o que quebrou. Isso ajuda a calibrar sua autoavaliação, combatendo a arrogância inicial ou a insegurança crônica.",
+    "tags": [
+      "autoconhecimento",
+      "viés",
+      "aprendizado",
+      "confiança",
+      "humildade"
+    ]
+  },
+  {
+    "titulo": "Privação de Sono Crônica",
+    "categoria": "Sono",
+    "descricao": "Quando a exaustão se torna rotina, você fica 'travado' e comete erros de lógica repetitivos. A falta de sono afeta drasticamente o córtex pré-frontal, diminuindo a função executiva e a capacidade de resolver problemas.",
+    "aplicacao": "Se estiver em um ciclo vicioso de erros, não tente 'forçar' a solução após 16 horas acordado. Priorize consistentemente 7 a 9 horas de sono por noite para garantir que seu cérebro esteja apto para o raciocínio crítico.",
+    "tags": ["fadiga", "erros", "lógica", "qualidade", "descanso"]
+  },
+  {
+    "titulo": "Viés de Falsa Consenso",
+    "categoria": "Vieses cognitivos",
+    "descricao": "A crença errônea de que todos os outros desenvolvedores pensam da mesma forma que você sobre boas práticas, escolhas de arquitetura ou a severidade de um bug. Isso gera conflito e dificuldade de comunicação.",
+    "aplicacao": "Ao revisar código, assuma que as escolhas do colega têm uma lógica válida dentro do contexto dele. Sempre comece a crítica perguntando sobre o *porquê* da implementação antes de propor a sua solução.",
+    "tags": ["revisão", "comunicação", "viés", "equipe", "opinião"]
+  },
+  {
+    "titulo": "Hipótese da Simulação Motora",
+    "categoria": "Neuroplasticidade",
+    "descricao": "Muitas vezes, a dificuldade em decifrar um algoritmo complexo não é falta de conhecimento, mas a incapacidade do cérebro de 'simular' como ele rodará. Essa simulação engaja áreas motoras.",
+    "aplicacao": "Quando estiver depurando ou projetando um algoritmo complexo, feche os olhos e 'simule' mentalmente, passo a passo, o fluxo de dados através do código (debugging mental) antes de executá-lo ou escrevê-lo.",
+    "tags": ["algoritmo", "visualização", "debug", "prática", "bloqueio"]
+  },
+  {
+    "titulo": "Regulação Emocional (Pre-frontal)",
+    "categoria": "Sistema de Recompensa (Dopamina)",
+    "descricao": "A raiva ou frustração intensa que surge ao enfrentar falhas de compilação ou bugs recorrentes pode 'sequestrar' o córtex pré-frontal, levando a decisões impulsivas (o famoso 'rage quit') e a mais erros.",
+    "aplicacao": "Ao sentir a frustração crescer, pare de codar imediatamente e use a técnica de 'nomear para domar': verbalize (ou escreva) a emoção ('Estou furioso com este erro de sintaxe') antes de retomar o trabalho.",
+    "tags": ["frustração", "emoções", "pausa", "controle", "estresse"]
+  },
+  {
+    "titulo": "Foco de Curto Prazo vs. Memória de Trabalho",
+    "categoria": "Carga Cognitiva",
+    "descricao": "O sentimento de se sentir 'perdido' ou esquecendo o objetivo principal de um bloco de código após uma interrupção mínima (e-mail, Slack). A memória de trabalho perde o contexto rapidamente.",
+    "aplicacao": "Use uma técnica de 'dump mental' antes de atender a qualquer interrupção: escreva 1 a 3 palavras-chave do que você estava fazendo e qual é o próximo passo. Isso permite recarregar o contexto com eficiência.",
+    "tags": ["interrupção", "foco", "memória", "contexto", "produtividade"]
+  },
+  {
+    "titulo": "Limiar de Excitabilidade Sináptica",
+    "categoria": "Neuroplasticidade",
+    "descricao": "Explica a procrastinação: a dificuldade em começar uma tarefa é alta porque o cérebro exige muito esforço inicial para disparar as sinapses relevantes, gerando uma barreira mental.",
+    "aplicacao": "Implemente a 'regra dos 2 minutos': Comece sempre pela parte *mais fácil* da tarefa (por exemplo, escrever a docstring, nomear a função, ou o teste de unidade) para diminuir o limiar de esforço e iniciar o fluxo neural.",
+    "tags": ["procrastinação", "começar", "esforço", "hábito", "ativação"]
+  },
+  {
+    "titulo": "Efeito de Priming",
+    "categoria": "Vieses cognitivos",
+    "descricao": "A influência sutil de informações anteriores no seu julgamento atual. Se você lê um comentário negativo sobre a complexidade de um módulo, tenderá a procurar e encontrar mais erros nele, mesmo que não existam.",
+    "aplicacao": "Se estiver revisando um código que já foi identificado como 'problemático', comece a revisão lendo apenas o código em si, antes de ler o ticket de bug, o histórico de commits ou os comentários iniciais.",
+    "tags": ["viés", "julgamento", "revisão", "expectativa", "neutralidade"]
+  },
+  {
+    "titulo": "Higiene do Sono (Ambiente)",
+    "categoria": "Sono",
+    "descricao": "A dificuldade em pegar no sono após longas sessões de codificação noturna, comprometendo o descanso restaurador. A exposição à luz azul e o excesso de atividade mental inibem a melatonina.",
+    "aplicacao": "Crie uma 'zona tampão' de 60 minutos antes de deitar, evitando todas as telas. Pratique atividades relaxantes, como leitura de papel ou alongamento leve, para sinalizar ao corpo que é hora de descansar.",
+    "tags": ["qualidade", "descanso", "rotina", "saúde", "insônia"]
+  },
+  {
+    "titulo": "Técnica Pomodoro e Dopamina Tônica",
+    "categoria": "Sistema de Recompensa (Dopamina)",
+    "descricao": "A dificuldade em manter a atenção constante em tarefas monótonas ou refatorações longas, levando à desmotivação. O cérebro precisa de pausas para manter o nível basal (tônico) de dopamina estável.",
+    "aplicacao": "Estruture o trabalho em ciclos curtos e intensos (ex: 25 minutos) seguidos de uma recompensa dopaminérgica leve (caminhar, beber água, alongar) para reajustar o foco e manter a atenção.",
+    "tags": ["foco", "produtividade", "pausas", "motivação", "recompensa"]
+  },
+  {
+    "titulo": "Viés de Ancoragem (Anchoring)",
+    "categoria": "Vieses cognitivos",
+    "descricao": "Ao estimar o tempo de um projeto, você se baseia fortemente na primeira estimativa que ouviu (mesmo que seja irrealista ou de baixa qualidade), ficando mentalmente travado nela.",
+    "aplicacao": "Force-se a gerar 3 estimativas independentes (otimista, realista, pessimista) antes de comunicar o prazo. Se a primeira estimativa for externa, gere suas 3 antes de ouvi-la seriamente.",
+    "tags": ["estimativa", "prazo", "viés", "planejamento", "erro"]
+  },
+  {
+    "titulo": "Interferência Proativa e Retroativa",
+    "categoria": "Carga Cognitiva",
+    "descricao": "Ocorre quando o aprendizado de uma coisa nova (Ex: uma nova sintaxe) dificulta a recordação de algo antigo (Interferência Retroativa), ou vice-versa (Proativa), resultando em confusão de contextos.",
+    "aplicacao": "Ao alternar entre linguagens ou projetos drasticamente diferentes, dedique 5 minutos para uma 'limpeza mental' e revise a documentação essencial do contexto atual para reorientar a memória.",
+    "tags": ["sintaxe", "confusão", "memória", "multitarefa", "contexto"]
+  },
+  {
+    "titulo": "Neurogênese Adulta",
+    "categoria": "Neuroplasticidade",
+    "descricao": "Contraria o mito de que é tarde demais para aprender tecnologias complexas. O cérebro adulto continua a produzir novos neurônios, especialmente no hipocampo, essenciais para o aprendizado e memória.",
+    "aplicacao": "Engaje-se em exercícios aeróbicos moderados (20 a 30 minutos) antes de sessões de aprendizado de algo radicalmente novo. O exercício estimula o BDNF, que potencializa a criação de novos neurônios.",
+    "tags": ["aprendizado", "idade", "mudança", "exercício", "crescimento"]
+  },
+  {
+    "titulo": "Privação de Sono Parcial",
+    "categoria": "Sono",
+    "descricao": "Dormir consistentemente menos de 7 horas seguidas. Embora pareça funcional, leva a uma acumulação de débito de sono que resulta em baixa performance, erros constantes e aumento da irritabilidade durante o dia.",
+    "aplicacao": "Se você teve uma noite ruim, evite reuniões complexas e priorize tarefas de codificação de baixo risco, como refatoração ou testes, no período da manhã para minimizar erros e impactos de julgamento.",
+    "tags": ["irritabilidade", "erro", "performance", "foco", "saúde"]
+  },
+  {
+    "titulo": "Viés de Resultado (Outcome Bias)",
+    "categoria": "Vieses cognitivos",
+    "descricao": "Julgar uma decisão de arquitetura ou técnica como ruim *apenas* porque o resultado final foi um bug ou falha, ignorando a qualidade e a lógica do processo de decisão original (as informações disponíveis na época).",
+    "aplicacao": "Ao fazer a retrospectiva de um erro, avalie a lógica e as informações disponíveis *no momento* da decisão, separando-a do resultado negativo. Isso evita o medo de tomar decisões futuras complexas.",
+    "tags": ["julgamento", "retrospectiva", "erro", "decisão", "avaliação"]
+  },
+  {
+    "titulo": "O Paradoxo da Escolha",
+    "categoria": "Carga Cognitiva",
+    "descricao": "Ficar travado ou paralisado ao enfrentar inúmeras opções de ferramentas, bibliotecas ou frameworks (ex: 'Qual front-end usar?'). O excesso de escolhas aumenta a ansiedade e a sobrecarga cognitiva, levando ao não-agir.",
+    "aplicacao": "Implemente a 'regra dos 80/20' para a escolha de ferramentas: Escolha a solução que atende 80% dos requisitos rapidamente e ignore as demais para reduzir a sobrecarga de decisão e focar na entrega.",
+    "tags": ["escolha", "bloqueio", "decisão", "framework", "produtividade"]
+  },
+  {
+    "titulo": "Via Mesolímbica (Dopamina)",
+    "categoria": "Sistema de Recompensa (Dopamina)",
+    "descricao": "O principal caminho de recompensa no cérebro que nos faz buscar 'gratificação instantânea' (checar redes sociais, e-mail) em vez de focar no trabalho complexo que oferece recompensa atrasada (o projeto finalizado).",
+    "aplicacao": "Quebre tarefas grandes em micro-etapas gerenciáveis (micro-commits, testes passados) para gerar pequenas e constantes liberações de dopamina ao longo do caminho, mantendo o sistema de recompensa engajado no projeto principal.",
+    "tags": [
+      "procrastinação",
+      "gratificação",
+      "foco",
+      "micro-tarefas",
+      "motivação"
+    ]
+  },
+  {
+    "titulo": "Plasticidade Dependente de Experiência",
+    "categoria": "Neuroplasticidade",
+    "descricao": "A dificuldade em abandonar velhos hábitos de codificação (como padrões de linguagem obsoletos ou vícios) quando uma nova e melhor prática é introduzida, pois o cérebro prefere os caminhos neurais mais usados.",
+    "aplicacao": "Pratique o novo padrão em um ambiente isolado (kata ou projeto pessoal) até que a nova conexão sináptica seja mais forte que a antiga. Isso exige repetição consciente e forçada, rompendo o conforto do hábito.",
+    "tags": ["hábito", "mudança", "aprendizado", "sinapse", "prática"]
+  },
+  {
+    "titulo": "Apnéia do Sono e Função Cognitiva",
+    "categoria": "Sono",
+    "descricao": "Distúrbios do sono (como apnéia) causam microdespertares e diminuição da oxigenação cerebral, resultando em performance cognitiva reduzida, 'névoa cerebral' e sensação de que nunca se está totalmente alerta.",
+    "aplicacao": "Se você ronca alto, acorda frequentemente cansado ou sente sonolência diurna excessiva, busque um diagnóstico médico para tratar distúrbios do sono. A melhora na qualidade do sono pode aumentar drasticamente a capacidade de codificar.",
+    "tags": ["saúde", "qualidade", "alerta", "descanso", "função cognitiva"]
+  },
+  {
+    "titulo": "Viés de Status Quo",
+    "categoria": "Vieses cognitivos",
+    "descricao": "A resistência instintiva em adotar novas ferramentas, linguagens ou metodologias, preferindo manter o que é familiar (mesmo que seja obsoleto) porque o cérebro economiza energia evitando o desconforto da mudança.",
+    "aplicacao": "Implemente 'dias de experimentação' forçados: dedique 1 hora por semana para testar uma nova ferramenta que desafie diretamente seu fluxo de trabalho atual. A exposição controlada quebra a resistência ao novo.",
+    "tags": ["resistência", "mudança", "viés", "inovação", "aprendizado"]
+  },
+  {
+    "titulo": "Distração Endógena (Mind-Wandering)",
+    "categoria": "Carga Cognitiva",
+    "descricao": "A dificuldade em manter o foco em tarefas complexas devido à tendência natural do cérebro de divagar (sonhos diurnos, pensamentos aleatórios). Isso consome recursos da memória de trabalho, gerando a sensação de 'travado'.",
+    "aplicacao": "Use o método 50/10: 50 minutos de foco total seguido por 10 minutos de 'divagação programada' (descanso mental ativo). Isso satisfaz a necessidade do cérebro de desviar sem comprometer o tempo de trabalho focado.",
+    "tags": ["foco", "distração", "concentração", "divagação", "intervalo"]
+  },
+  {
+    "titulo": "Antecipação de Recompensa (Dopamina)",
+    "categoria": "Sistema de Recompensa (Dopamina)",
+    "descricao": "A desmotivação surge quando a tarefa é longa e o momento da recompensa (deploy, merge, aprovação) parece distante. O pico de dopamina ocorre na *antecipação* da recompensa, e não na sua concretização.",
+    "aplicacao": "Crie um ritual de celebração visual e auditiva antes de iniciar tarefas grandes (ex: mudar o status do ticket para 'Fazendo' com um som de vitória, ou fazer um pequeno alongamento) para iniciar a liberação antecipatória de dopamina.",
+    "tags": ["motivação", "recompensa", "metas", "engajamento", "começar"]
   }
 ]
