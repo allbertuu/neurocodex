@@ -1,127 +1,128 @@
-let cardsContainer = document.querySelector(".cards-container");
-let paginationContainer = document.querySelector(".pagination-container");
-let campoBusca = document.querySelector("#search");
-let dados = [];
-let dadosFiltrados = []; // Armazena os dados após busca e filtro de categoria
-let categoriaAtiva = "todos"; // Controla o filtro de categoria ativo
-let debounceTimer; // Timer para o delay da busca
+document.addEventListener("DOMContentLoaded", () => {
+  // --- Elementos da UI ---
+  const cardsContainer = document.querySelector(".cards-container");
+  const paginationContainer = document.querySelector(".pagination-container");
+  const campoBusca = document.querySelector("#search");
+  const backToTopBtn = document.getElementById("back-to-top-btn");
 
-// --- Variáveis de Paginação ---
-const itensPorPagina = 20;
-let paginaAtual = 1;
+  // --- Estado da Aplicação ---
+  let todosOsDados = [];
+  let dadosFiltrados = [];
+  let categoriaAtiva = "todos";
+  let paginaAtual = 1;
+  let debounceTimer;
+  const INPUT_DELAY_EM_MS_PARA_PESQUISAR = 600;
+  const ITENS_POR_PAGINA = 20;
 
-// Função principal que carrega os dados e inicializa a aplicação
-async function inicializar() {
-  try {
-    const resposta = await fetch("data.json");
-    dados = await resposta.json();
-    renderizarFiltros();
-    aplicarFiltros(); // Renderiza os cards iniciais
-  } catch (error) {
-    console.error("Falha ao buscar ou inicializar dados:", error);
-  }
-}
-
-// Extrai categorias únicas e cria os botões de filtro
-function renderizarFiltros() {
-  const categoriasUnicas = ["todos", ...new Set(dados.map((d) => d.categoria))];
-  const filtersContainer = document.createElement("div");
-  filtersContainer.classList.add("filters-container");
-
-  categoriasUnicas.forEach((categoria) => {
-    const btn = document.createElement("button");
-    btn.className = "filter-btn";
-    btn.textContent = categoria;
-    btn.dataset.categoria = categoria.toLowerCase();
-    if (categoria.toLowerCase() === categoriaAtiva) {
-      btn.classList.add("active");
+  const inicializar = async () => {
+    try {
+      const resposta = await fetch("data.json");
+      todosOsDados = await resposta.json();
+      renderizarFiltros();
+      aplicarFiltros(); // Renderiza os cards iniciais
+    } catch (error) {
+      console.error("Falha ao buscar ou inicializar dados:", error);
     }
-    btn.addEventListener("click", () => {
-      categoriaAtiva = categoria.toLowerCase();
-      // Atualiza o estado ativo dos botões
-      document
-        .querySelectorAll(".filter-btn")
-        .forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
+  };
+
+  const renderizarFiltros = () => {
+    const categoriasUnicas = [
+      "todos",
+      ...new Set(todosOsDados.map((d) => d.categoria)),
+    ];
+    const filtersContainer = document.createElement("div");
+    filtersContainer.classList.add("filters-container");
+
+    filtersContainer.innerHTML = categoriasUnicas
+      .map(
+        (categoria) => `
+    <button class="filter-btn ${
+      categoria === "todos" ? "active" : ""
+    }" data-categoria="${categoria.toLowerCase()}">
+      ${categoria}
+    </button>
+  `
+      )
+      .join("");
+
+    cardsContainer.before(filtersContainer);
+
+    filtersContainer.addEventListener("click", (e) => {
+      const target = e.target.closest(".filter-btn");
+      if (!target) return;
+
+      categoriaAtiva = target.dataset.categoria;
+      filtersContainer.querySelector(".active")?.classList.remove("active");
+      target.classList.add("active");
       aplicarFiltros();
     });
-    filtersContainer.appendChild(btn);
-  });
+  };
 
-  // Insere os filtros antes do container de cards
-  cardsContainer.before(filtersContainer);
-}
+  const aplicarFiltros = () => {
+    const termoBusca = campoBusca.value.toLowerCase();
 
-// Função central que aplica o filtro de categoria e a busca por texto
-function aplicarFiltros() {
-  // 1. Filtra por categoria
-  let dadosFiltradosPorCategoria = dados;
-  if (categoriaAtiva !== "todos") {
-    dadosFiltradosPorCategoria = dados.filter(
-      (dado) => dado.categoria.toLowerCase() === categoriaAtiva
+    const porCategoria =
+      categoriaAtiva === "todos"
+        ? todosOsDados
+        : todosOsDados.filter(
+            (d) => d.categoria.toLowerCase() === categoriaAtiva
+          );
+
+    dadosFiltrados = porCategoria.filter(
+      (dado) =>
+        dado.titulo.toLowerCase().includes(termoBusca) ||
+        dado.descricao.toLowerCase().includes(termoBusca) ||
+        dado.tags.some((tag) => tag.toLowerCase().includes(termoBusca))
     );
-  }
 
-  // 2. Filtra pelo termo de busca
-  const termoBusca = campoBusca.value.toLowerCase();
-  dadosFiltrados = dadosFiltradosPorCategoria.filter(
-    (dado) =>
-      dado.titulo.toLowerCase().includes(termoBusca) ||
-      dado.descricao.toLowerCase().includes(termoBusca) ||
-      dado.tags.some((tag) => tag.toLowerCase().includes(termoBusca))
-  );
+    paginaAtual = 1;
+    configurarPaginacao();
+    renderizarPagina(paginaAtual);
+  };
 
-  paginaAtual = 1; // Reseta para a primeira página a cada novo filtro
-  configurarPaginacao();
-  renderizarPagina(paginaAtual);
-}
+  const renderizarPagina = (pagina) => {
+    paginaAtual = pagina;
+    const inicio = (pagina - 1) * ITENS_POR_PAGINA;
+    const fim = inicio + ITENS_POR_PAGINA;
+    const itensDaPagina = dadosFiltrados.slice(inicio, fim);
 
-// Renderiza os cards para uma página específica
-function renderizarPagina(pagina) {
-  paginaAtual = pagina;
-  const inicio = (pagina - 1) * itensPorPagina;
-  const fim = inicio + itensPorPagina;
-  const itensDaPagina = dadosFiltrados.slice(inicio, fim);
+    renderizarCards(itensDaPagina);
+    atualizarBotaoAtivo();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
-  renderizarCards(itensDaPagina);
-  atualizarBotaoAtivo();
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
+  const configurarPaginacao = () => {
+    paginationContainer.innerHTML = "";
+    const totalPaginas = Math.ceil(dadosFiltrados.length / ITENS_POR_PAGINA);
 
-// Cria e gerencia os botões de navegação da página
-function configurarPaginacao() {
-  paginationContainer.innerHTML = "";
-  const totalPaginas = Math.ceil(dadosFiltrados.length / itensPorPagina);
+    if (totalPaginas <= 1) return;
 
-  if (totalPaginas <= 1) return; // Não mostra paginação se houver apenas 1 página
-
-  for (let i = 1; i <= totalPaginas; i++) {
-    const btn = document.createElement("button");
-    btn.className = "page-btn";
-    btn.innerText = i;
-    btn.addEventListener("click", () => renderizarPagina(i));
-    paginationContainer.appendChild(btn);
-  }
-}
-
-// Destaca o botão da página atual
-function atualizarBotaoAtivo() {
-  document.querySelectorAll(".page-btn").forEach((btn) => {
-    btn.classList.remove("active");
-    if (parseInt(btn.innerText) === paginaAtual) {
-      btn.classList.add("active");
+    for (let i = 1; i <= totalPaginas; i++) {
+      const btn = document.createElement("button");
+      btn.className = "page-btn";
+      btn.innerText = i;
+      paginationContainer.appendChild(btn);
     }
-  });
-}
+  };
 
-function renderizarCards(dadosParaRenderizar) {
-  cardsContainer.innerHTML = ""; // Limpa os cards existentes antes de renderizar novos
-  dadosParaRenderizar.forEach((dado, index) => {
-    let article = document.createElement("article");
-    article.classList.add("card");
-    // Adiciona um atraso escalonado para a animação de entrada
-    article.style.animationDelay = `${index * 100}ms`;
-    article.innerHTML = `
+  const atualizarBotaoAtivo = () => {
+    paginationContainer.querySelector(".active")?.classList.remove("active");
+    document.querySelectorAll(".page-btn").forEach((btn) => {
+      if (parseInt(btn.innerText) === paginaAtual) {
+        btn.classList.add("active");
+      }
+    });
+  };
+
+  const renderizarCards = (dadosParaRenderizar) => {
+    if (dadosParaRenderizar.length === 0) {
+      cardsContainer.innerHTML = `<p class="nenhum-resultado">Nenhum resultado encontrado. Tente um termo ou filtro diferente.</p>`;
+      return;
+    }
+    cardsContainer.innerHTML = dadosParaRenderizar
+      .map(
+        (dado, index) => `
+    <article class="card" style="animation-delay: ${index * 100}ms;">
           <small class="tag">${dado.categoria.toUpperCase()}</small>
           <h3>${dado.titulo}</h3>
           <p>${dado.descricao}</p>
@@ -134,37 +135,36 @@ function renderizarCards(dadosParaRenderizar) {
               .map((tag) => `<span class="tag-item">#${tag}</span>`)
               .join("")}
           </div>
-        `;
-    cardsContainer.appendChild(article);
+    </article>
+  `
+      )
+      .join("");
+  };
+
+  // --- Ouvintes de Eventos ---
+
+  campoBusca.addEventListener("input", () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(
+      aplicarFiltros,
+      INPUT_DELAY_EM_MS_PARA_PESQUISAR
+    );
   });
-}
 
-// Adiciona o ouvinte de evento para a busca em tempo real
-campoBusca.addEventListener("input", () => {
-  // Limpa o timer anterior para reiniciar a contagem
-  clearTimeout(debounceTimer);
-  // Define um novo timer para executar a busca após um pequeno atraso
-  const delayInMs = 600;
-  debounceTimer = setTimeout(aplicarFiltros, delayInMs);
-});
+  paginationContainer.addEventListener("click", (e) => {
+    const target = e.target.closest(".page-btn");
+    if (!target) return;
+    renderizarPagina(parseInt(target.innerText, 10));
+  });
 
-// Inicia a aplicação
-inicializar();
+  window.addEventListener("scroll", () => {
+    backToTopBtn.classList.toggle("show", window.scrollY > 300);
+  });
 
-// --- Lógica para o botão "Voltar para o Topo" ---
-const backToTopBtn = document.getElementById("back-to-top-btn");
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 
-// Mostra ou esconde o botão baseado na posição do scroll
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    // Mostra o botão após rolar 300px
-    backToTopBtn.classList.add("show");
-  } else {
-    backToTopBtn.classList.remove("show");
-  }
-});
-
-// Rola para o campo de busca ao clicar
-backToTopBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  // --- Inicialização ---
+  inicializar();
 });
