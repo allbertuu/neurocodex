@@ -1,8 +1,14 @@
 let cardsContainer = document.querySelector(".cards-container");
+let paginationContainer = document.querySelector(".pagination-container");
 let campoBusca = document.querySelector("#search");
 let dados = [];
+let dadosFiltrados = []; // Armazena os dados após busca e filtro de categoria
 let categoriaAtiva = "todos"; // Controla o filtro de categoria ativo
 let debounceTimer; // Timer para o delay da busca
+
+// --- Variáveis de Paginação ---
+const itensPorPagina = 20;
+let paginaAtual = 1;
 
 // Função principal que carrega os dados e inicializa a aplicação
 async function inicializar() {
@@ -58,19 +64,59 @@ function aplicarFiltros() {
 
   // 2. Filtra pelo termo de busca
   const termoBusca = campoBusca.value.toLowerCase();
-  const dadosFiltradosFinal = dadosFiltradosPorCategoria.filter(
+  dadosFiltrados = dadosFiltradosPorCategoria.filter(
     (dado) =>
       dado.titulo.toLowerCase().includes(termoBusca) ||
       dado.descricao.toLowerCase().includes(termoBusca) ||
       dado.tags.some((tag) => tag.toLowerCase().includes(termoBusca))
   );
 
-  renderizarCards(dadosFiltradosFinal);
+  paginaAtual = 1; // Reseta para a primeira página a cada novo filtro
+  configurarPaginacao();
+  renderizarPagina(paginaAtual);
 }
 
-function renderizarCards(dados) {
+// Renderiza os cards para uma página específica
+function renderizarPagina(pagina) {
+  paginaAtual = pagina;
+  const inicio = (pagina - 1) * itensPorPagina;
+  const fim = inicio + itensPorPagina;
+  const itensDaPagina = dadosFiltrados.slice(inicio, fim);
+
+  renderizarCards(itensDaPagina);
+  atualizarBotaoAtivo();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Cria e gerencia os botões de navegação da página
+function configurarPaginacao() {
+  paginationContainer.innerHTML = "";
+  const totalPaginas = Math.ceil(dadosFiltrados.length / itensPorPagina);
+
+  if (totalPaginas <= 1) return; // Não mostra paginação se houver apenas 1 página
+
+  for (let i = 1; i <= totalPaginas; i++) {
+    const btn = document.createElement("button");
+    btn.className = "page-btn";
+    btn.innerText = i;
+    btn.addEventListener("click", () => renderizarPagina(i));
+    paginationContainer.appendChild(btn);
+  }
+}
+
+// Destaca o botão da página atual
+function atualizarBotaoAtivo() {
+  document.querySelectorAll(".page-btn").forEach((btn) => {
+    btn.classList.remove("active");
+    if (parseInt(btn.innerText) === paginaAtual) {
+      btn.classList.add("active");
+    }
+  });
+}
+
+function renderizarCards(dadosParaRenderizar) {
   cardsContainer.innerHTML = ""; // Limpa os cards existentes antes de renderizar novos
-  dados.forEach((dado, index) => {
+  dadosParaRenderizar.forEach((dado, index) => {
     let article = document.createElement("article");
     article.classList.add("card");
     // Adiciona um atraso escalonado para a animação de entrada
