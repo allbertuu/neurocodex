@@ -55,8 +55,9 @@ O principal aprendizado com esse projeto foi que você não precisa de um códig
 
 ## Roadmap (próximos passos)
 
-- [ ] Adicionar mais conteúdos (curados por mim)
 - [ ] Implementar sistema de favoritos
+- [ ] Implementar função de "reportar protocolo" (caso haja erro semântico ou inveracidade)
+- [x] Adicionar mais conteúdos (curados por mim)
 - [x] Inserir favicon personalizada
 - [x] Implementar animações suaves com CSS
 - [x] Implementar tema escuro e fundo decorativo com tema dev
