@@ -57,8 +57,8 @@ O principal aprendizado com esse projeto foi que você não precisa de um códig
 
 - [ ] Implementar sistema de favoritos
 - [ ] Implementar função de "reportar protocolo" (caso haja erro semântico ou inveracidade)
+- [x] Implementar paginação
 - [x] Adicionar mais conteúdos (curados por mim)
-- [x] Inserir favicon personalizada
 - [x] Implementar animações suaves com CSS
 - [x] Implementar tema escuro e fundo decorativo com tema dev
 - [x] Implementar busca em tempo real (similar ao command palette do VSCode)
