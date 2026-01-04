@@ -173,7 +173,7 @@ header input:focus + .search-icon,
 
 .card:hover::before {
   opacity: 1;
-  animation: pulsoSinapse 1.2s infinite ease-in-out;
+  animation: pulsoSinapse 1.2s ease-in-out;
 }
 
 .card h3 {
